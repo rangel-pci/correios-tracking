@@ -30,4 +30,4 @@ app.get('/', (req, res) => {
 
 });
 
-app.listen(PORT, '192.168.0.14', () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
