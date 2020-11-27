@@ -7,7 +7,7 @@ const correios = require('correios.js');
 const app = express();
 app.use(cors());
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
 	const {tracking} = req.query;
