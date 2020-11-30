@@ -8,8 +8,8 @@ app.use(cors());
 
 var PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-	const {tracking} = req.query;
+app.get('/:tracking', (req, res) => {
+	const {tracking} = req.params;
 
 	correios.track(tracking)
 	.then((result) => {
