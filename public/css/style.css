@@ -1,0 +1,135 @@
+body{
+	font-family: 'Nunito', sans-serif;
+	color: rgba(0,0,0,.5);
+
+	background: #f1f1f1;
+}
+
+.logo{
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 16px -12px;
+}
+
+.alert{
+	z-index: 10;
+}
+
+.shadow-sm-warning{
+	box-shadow: 0 2px 26px -10px #ffc107 !important;
+}
+
+.object-info{
+	box-shadow: 0 2px 10px -4px rgba(0,0,0, 0.5);
+}
+
+.pp{
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+
+	border-right: 10px solid #007bff;
+
+	position: absolute;
+	right: 0;
+	bottom: -9px;
+}
+
+#tracking-code{
+	z-index: 1;
+}
+
+#searching{
+  display: block;
+	opacity: 0.7;
+}
+
+#searching.action{
+	display: block;
+	-webkit-animation: searching 2s infinite ease-in-out;
+    animation: searching 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes searching {
+  0%{
+    -webkit-opacity: 0.7;
+            opacity: 0.7;
+  }
+  50%{
+    -webkit-opacity: 0.2;
+            opacity: 0.2;
+  }
+  100%{
+    -webkit-opacity: 0.7;
+            opacity: 0.7;
+  }
+}
+
+@keyframes searching {
+  0%{
+    -webkit-opacity: 0.7;
+            opacity: 0.7;
+  }
+  50%{
+    -webkit-opacity: 0.2;
+            opacity: 0.2;
+  }
+  100%{
+    -webkit-opacity: 0.7;
+            opacity: 0.7;
+  }
+}
+
+#info-container{
+	display: none;
+	z-index: -1;
+}
+
+#info-container.action{
+	display: block;
+	-webkit-animation: info 2s ease-in;
+    animation: info 2s ease-in;
+}
+
+@-webkit-keyframes info {
+  0%{
+    -webkit-transform:  translateY(-100%);
+            transform:  translateY(-100%);
+  }
+  100%{
+    -webkit-transform:  translateY(0);
+            transform:  translateY(0);
+  }
+}
+
+@keyframes info {
+	0%{
+	-webkit-transform:  translateY(-100%);
+            transform:  translateY(-100%);
+	}
+	100%{
+	-webkit-transform:  translateY(0);
+	        transform:  translateY(0);
+	}
+}
+
+input { 
+    text-transform: uppercase;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder { /* Recent browsers */
+    text-transform: none;
+}
