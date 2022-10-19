@@ -69,7 +69,7 @@ function track(code, input) {
 
 function renderEvents(data){
 	const events = data.result.events;
-	
+	console.log('length', events.length);
 	if (events.length < 1) {
 		$('#not-found').text('O código está incorreto ou ainda não se encontra no sistema dos Correios.');
 		$('#not-found').animate({opacity: 'show', marginTop: '20px'});

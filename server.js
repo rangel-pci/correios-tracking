@@ -1,7 +1,8 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const cors = require('cors');
-const correios = require('correios.js');
+const Correios = require('correios.js');
+const correios = new Correios();
 
 const app = express();
 app.use(cors());
@@ -27,7 +28,17 @@ app.get('/:tracking', (req, res) => {
 
 	correios.track(tracking)
 	.then((result) => {
-		res.json({ message: 'ok', tracking, result });
+		const events = result.events;
+		
+		let temp = [];
+		events.map((r) => {
+			r.message = r.event;
+			r.event = '';
+			temp.push(r);
+		})
+		result.events = temp;
+
+		res.status(200).json({ message: 'ok', tracking, result });
 	})
 	.catch(() => {
 		res.json({ message: 'error', error });
